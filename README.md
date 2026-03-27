@@ -1,4 +1,4 @@
-# autoresearch
+# karpathy-loop
 
 A zero-dependency Python + git ratchet for autonomous iterative code improvement. Claude Code reads a `program.md` instruction file describing what to optimize, generates improved code, and `iterate.py` handles benchmarking, scoring, and git commit/revert decisions. No API keys. No pip installs. Pure Python stdlib + git. The score can only go up (or down, depending on direction) -- failed experiments are automatically reverted, and every improvement is committed with its score delta in the message.
 
@@ -104,7 +104,7 @@ See `examples/smc/program.md` and `examples/twb/program.md` for reference.
 ## File Structure
 
 ```
-autoresearch/
+karpathy-loop/
   iterate.py              Core ratchet tool (copy into any project)
   setup_project.py        Interactive project scaffolder
   .gitignore              Standard ignores

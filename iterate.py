@@ -1,5 +1,5 @@
 """
-iterate.py -- single reusable ratchet tool for autoresearch.
+iterate.py -- single reusable ratchet tool for karpathy-loop.
 
 Copy this file into any project. Configure the CONFIG dict below.
 Run: python iterate.py

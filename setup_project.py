@@ -1,11 +1,11 @@
 """
-setup_project.py -- Interactive scaffolder for new autoresearch projects.
+setup_project.py -- Interactive scaffolder for new karpathy-loop projects.
 
 Prompts for project settings, then creates a project directory with:
   - iterate.py   (patched copy of the real iterate.py with CONFIG filled in)
   - benchmark.py  (template)
   - program.md    (template)
-  - .gitignore    (standard autoresearch ignores)
+  - .gitignore    (standard karpathy-loop ignores)
 
 Zero dependencies beyond Python stdlib.
 """
@@ -143,7 +143,7 @@ PROGRAM_MD_TEMPLATE = textwrap.dedent("""\
 
 
 GITIGNORE_TEMPLATE = textwrap.dedent("""\
-    .autoresearch/
+    .karpathy-loop/
     __pycache__/
     *.pyc
     .env
@@ -152,7 +152,7 @@ GITIGNORE_TEMPLATE = textwrap.dedent("""\
 
 
 def main():
-    print("=== autoresearch project scaffolder ===")
+    print("=== karpathy-loop project scaffolder ===")
     print("")
 
     project_name = _prompt("Project name", required=True)
