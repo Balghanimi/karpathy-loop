@@ -18,9 +18,9 @@ import time
 # ---------------------------------------------------------------------------
 CONFIG = {
     "benchmark_cmd": "python benchmark.py",
-    "modifiable_files": ["controllers/surface.py"],
+    "modifiable_files": ["controller/balance.py"],
     "metric": "minimize",          # "minimize" or "maximize"
-    "metric_name": "Mean ISE",
+    "metric_name": "Balance Score",
     "timeout": 300,                # seconds
     "max_iterations": 50,          # 0 = unlimited
 }
