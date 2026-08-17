@@ -1,7 +1,18 @@
 import fs from 'node:fs';
 
-const html = fs.readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
 const config = JSON.parse(fs.readFileSync(new URL('../protected-content.json', import.meta.url), 'utf8'));
+const localUrl = new URL('../site/index.html', import.meta.url);
+let html;
+if (process.env.BASE_URL) {
+  const url = process.env.BASE_URL.replace(/\/$/, '') + '/';
+  const res = await fetch(url, { redirect: 'follow' });
+  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  html = await res.text();
+} else if (fs.existsSync(localUrl)) {
+  html = fs.readFileSync(localUrl, 'utf8');
+} else {
+  throw new Error('Set BASE_URL or provide site/index.html');
+}
 
 const failures = [];
 for (const text of config.mustContain) {
