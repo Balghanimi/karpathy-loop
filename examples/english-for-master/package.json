@@ -1,0 +1,18 @@
+{
+  "name": "english-for-master-quality-loop",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test:protected": "node scripts/check-protected-content.mjs",
+    "test:a11y": "playwright test tests/accessibility.spec.js --project=chromium",
+    "test:visual": "playwright test tests/visual.spec.js --project=chromium",
+    "lhci": "lhci autorun",
+    "score": "node scripts/score.mjs",
+    "test": "npm run test:protected && npm run test:a11y && npm run test:visual"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.57.0"
+  }
+}

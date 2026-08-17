@@ -1,0 +1,23 @@
+{
+  "rubric": {
+    "visual_hierarchy": 25,
+    "typography_readability": 20,
+    "color_contrast": 15,
+    "spacing_layout": 15,
+    "mobile": 10,
+    "academic_professionalism": 10,
+    "print": 5
+  },
+  "best_score": 100,
+  "best_label": "iteration-5",
+  "iterations": [
+    {"label":"baseline","score":97,"decision":"BASELINE"},
+    {"label":"iteration-1","score":96,"decision":"REVERT","focus":"palette and contrast"},
+    {"label":"iteration-2","score":97,"decision":"REVERT","focus":"typography scale"},
+    {"label":"iteration-3","score":98,"decision":"KEEP","focus":"spacing, cards and interaction polish"},
+    {"label":"iteration-4","score":98,"decision":"REVERT","focus":"navigation, buttons and progress styling"},
+    {"label":"iteration-5","score":100,"decision":"KEEP","focus":"mobile and print polish"}
+  ],
+  "production_changed": false,
+  "preview": "https://english-for-master-visual-loop.vercel.app"
+}

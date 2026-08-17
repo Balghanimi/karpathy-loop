@@ -1,0 +1,44 @@
+{
+  "mustContain": [
+    "University of Kufa",
+    "Electrical Engineering Department",
+    "English for Master",
+    "Assist. Prof. Dr. Ali Al-Ghanimi",
+    "15 weeks",
+    "120",
+    "10-min break",
+    "Continuous Assessment",
+    "30 / 100",
+    "Final Examination",
+    "70 / 100",
+    "Midterm Examination",
+    "15 marks",
+    "Comprehensive Review and Final Examination Preparation"
+  ],
+  "weekHeadings": [
+    "Course Orientation + How to Read a Research Paper Efficiently",
+    "Understanding Academic Vocabulary in Context",
+    "Common Tenses in Academic Writing",
+    "Descriptive Academic Language for Engineers",
+    "Describing Graphs & Charts I: Language and Accuracy",
+    "Describing Graphs & Charts II: Analysis and Evaluation",
+    "Building Better Academic Sentences",
+    "Midterm Examination",
+    "Cohesion and Coherence in Academic Writing",
+    "Fact, Opinion, Evidence and Academic Neutrality",
+    "Paraphrasing and Avoiding Plagiarism",
+    "Citation, Referencing and Integrating Sources",
+    "Summarizing, Synthesis and Literature-Review Language",
+    "Research-Paper Structure and Academic Research Communication",
+    "Comprehensive Review and Final Examination Preparation"
+  ],
+  "constraints": {
+    "weekCount": 15,
+    "midtermWeek": 8,
+    "reviewWeek": 15,
+    "continuousAssessment": 30,
+    "finalExam": 70,
+    "weeklyMinutes": 120,
+    "breakMinutes": 10
+  }
+}

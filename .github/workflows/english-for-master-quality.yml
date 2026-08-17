@@ -1,0 +1,49 @@
+name: English for Master Quality Gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Production or Vercel Preview URL to test'
+        required: false
+        default: 'https://english-for-master.vercel.app'
+  pull_request:
+    paths:
+      - 'examples/english-for-master/**'
+      - '.github/workflows/english-for-master-quality.yml'
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/english-for-master
+    env:
+      BASE_URL: ${{ github.event.inputs.base_url || 'https://english-for-master.vercel.app' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: examples/english-for-master/package-lock.json
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - name: Protected academic content
+        run: npm run test:protected
+      - name: Accessibility
+        run: npm run test:a11y
+      - name: Lighthouse CI
+        run: npm run lhci
+      - name: Visual baseline / comparison
+        run: npx playwright test tests/visual.spec.js --project=chromium --update-snapshots
+      - name: Upload quality artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: english-for-master-quality
+          path: |
+            examples/english-for-master/.lighthouseci
+            examples/english-for-master/playwright-report
+            examples/english-for-master/test-results
+          if-no-files-found: ignore

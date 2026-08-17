@@ -1,0 +1,41 @@
+{
+  "baselineType": "structural-preflight",
+  "note": "This file records deterministic static checks run against the current site. Lighthouse/axe/visual scores are configured separately and should be populated by CI/preview runs; they are not fabricated here.",
+  "baseline": {
+    "score": 65.0,
+    "metrics": {
+      "meta_description": 0,
+      "skip_link": 0,
+      "main_id": 0,
+      "nav_label": 0,
+      "focus_visible": 0,
+      "progress_aria": 0,
+      "week_cards": 15,
+      "protected_course": 1
+    }
+  },
+  "iteration_1": {
+    "change": "Accessibility/metadata preflight only; academic content unchanged",
+    "score": 100.0,
+    "metrics": {
+      "meta_description": 1,
+      "skip_link": 1,
+      "main_id": 1,
+      "nav_label": 1,
+      "focus_visible": 1,
+      "progress_aria": 1,
+      "week_cards": 15,
+      "protected_course": 1
+    },
+    "delta": 35.0,
+    "decision": "KEEP_FOR_PREVIEW"
+  },
+  "pendingExternalMetrics": {
+    "lighthouse_performance": null,
+    "lighthouse_accessibility": null,
+    "lighthouse_best_practices": null,
+    "lighthouse_seo": null,
+    "axe_serious_critical_violations": null,
+    "visual_regression": null
+  }
+}
