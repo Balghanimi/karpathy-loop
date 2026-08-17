@@ -1,9 +1,10 @@
+const base = (process.env.BASE_URL || 'https://english-for-master.vercel.app').replace(/\/$/, '');
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: './site',
       numberOfRuns: 3,
-      url: ['http://localhost/index.html']
+      url: [`${base}/`],
+      settings: { chromeFlags: '--no-sandbox' }
     },
     assert: {
       assertions: {
